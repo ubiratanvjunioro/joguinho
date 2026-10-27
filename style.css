@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; --ink: #333; --accent: #e63946; }
+body {
+  margin: 0; min-height: 100vh; display: grid; place-items: center;
+  background: linear-gradient(#f7fbff, #e8f4ff); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.page { width: min(100% - 28px, 1000px); margin: 28px auto; text-align: center; }
+header h1 { margin: 0 0 4px; letter-spacing: .03em; }
+header p { margin: 0 0 24px; color: #667085; }
+.game-shell {
+  position: relative; overflow: hidden; background: #fff; border: 2px solid #d0d7de;
+  border-radius: 14px; box-shadow: 0 14px 36px #17324d18;
+}
+canvas { display: block; width: 100%; height: auto; image-rendering: pixelated; touch-action: manipulation; }
+.hud {
+  position: absolute; z-index: 2; top: 14px; right: 20px; display: flex; gap: 22px;
+  color: #555; font: 700 18px ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em; pointer-events: none;
+}
+.overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; background: #ffffffd9; padding: 20px;
+}
+.overlay.hidden { display: none; }
+.overlay h2 { margin: 0 0 8px; letter-spacing: .2em; font-size: clamp(20px, 4vw, 34px); }
+.overlay p { margin: 0 0 18px; }
+button {
+  border: 0; border-radius: 999px; padding: 11px 26px; background: var(--accent);
+  color: white; font-weight: 800; font-size: 16px; cursor: pointer;
+}
+button:hover { filter: brightness(.94); }
+.controls { color: #667085; font-size: 14px; margin-top: 15px; }
+.controls p { margin: 7px 0; }
+kbd { background: white; border: 1px solid #cbd5e1; border-bottom-width: 3px; border-radius: 5px; padding: 2px 6px; color: #344054; }
+@media (max-width: 600px) {
+  .page { width: calc(100% - 16px); margin: 14px auto; }
+  .hud { top: 8px; right: 10px; font-size: 13px; gap: 12px; }
+  .controls { font-size: 12px; }
+}

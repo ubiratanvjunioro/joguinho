@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Runner — Dino Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>🍄 Mario Runner</h1>
+      <p>Um jogo de corrida inspirado no Dino do Chrome</p>
+    </header>
+
+    <section class="game-shell" aria-label="Jogo Mario Runner">
+      <div class="hud">
+        <span>HI <strong id="best">00000</strong></span>
+        <span><strong id="score">00000</strong></span>
+      </div>
+      <canvas id="game" width="900" height="300" aria-label="Mario desviando de obstáculos"></canvas>
+      <div class="overlay" id="overlay">
+        <h2 id="overlay-title">MARIO RUNNER</h2>
+        <p id="overlay-text">Pressione ESPAÇO ou toque para começar</p>
+        <button id="start-btn" type="button">Jogar</button>
+      </div>
+    </section>
+
+    <div class="controls">
+      <p><kbd>ESPAÇO</kbd> / <kbd>↑</kbd> / <kbd>W</kbd> ou toque na tela para pular.</p>
+      <p>Desvie dos cactos e dos inimigos. A velocidade aumenta com o tempo!</p>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
